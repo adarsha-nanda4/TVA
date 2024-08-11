@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.statusBar{
+    width: 100%;
+    height: 70px;
+    display: flex;
+}
+.usertext{
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+
+}
+.userName{
+    font-size: 24px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.userBranch{
+    font-size: 17px;
+    color: gray;
+}
+.userimg{
+    width: 30%;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.img{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+   overflow: hidden;
+   background-image: url(/data/girl.png);
+   background-size: contain;
+   background-position: 5%;
+}
+
+/* <!--notes box --> */
+.text-box{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 60px 0px 20px ;
+}
+.notes
+{
+    color: white;
+    font-size: 40px;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
+}
+
+/* <!-- ad box --> */
+.add-box{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add{
+width: 90%;
+height: 90%;
+background-color: rgb(95, 182, 99);
+border-radius: 25px;
+}
+.date-time{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    color: white;
+    font-size: 20px;
+}
+.add-text{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    padding-left: 10px;
+    color: rgb(64, 68, 60);
+ 
+}
+.add-img{
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    display: flex;
+    justify-content: end;
+}
+
+
+
+/* <!-- courses-text-box --> */
+.courses-text-box{
+    width: 100%;
+    padding: 20px;
+  
+}
+.courses-text{
+    font-size: 30px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.courses-text2{
+   margin-top: 10px;
+    font-size: 20px;
+    color: gray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+/* <!-- courses-box container --> */
+
+.courses-container{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+
+}
+.courses-box{
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    scrollbar-width: none; /* For Firefox */
+    background-color: rgb(0, 0, 0);
+    gap: 15px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.course-box {
+    min-width: 200px;
+    height: 80%;
+    background-color: rgba(245, 245, 245, 0.446);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+#box1{background-color: rgba(251, 36, 93, 0.88)}
+#box2{background-color: rgba(163, 221, 255, 0.718)}
+#box3{background-color: rgba(247, 168, 111, 0.78)}
+#box4{background-color: rgb(209, 158, 254)}
+
+/* <!--  features link   container-box --> */
+.menu-container{
+    width: 100%;
+    height: 350px;
+    /* background-color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-box{
+width: 90%;
+height: 90%;
+background-color: rgba(255, 255, 255, 0.888);
+border-radius: 20px;
+display: flex;
+overflow: hidden;
+}
+.menu-one , .menu-two{
+ width: 50%;
+ height: 100%;
+ display: flex;
+ justify-content: space-around;
+align-items: start;
+flex-direction: column;
+ padding-left: 5px;
+
+}
+.menu{
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-family:Poppins ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.menu-img{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(245, 245, 245, 0.333);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* <!-------------- schedule text--------------- --> */
+.schedual-text-box{
+    width: 100%;
+    padding: 20px;
+}
+.schedual-text{
+    font-size: 30px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.schedual-text2{
+margin-top: 10px;
+    font-size: 18px;
+    color: gray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+#day-name{
+    color:rgb(95, 182, 99);
+    font-size: 20px;
+}
