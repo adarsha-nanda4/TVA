@@ -113,9 +113,3 @@ setInterval(updateTime, 1000);
 
 
 
-let timeTabel= document.getElementById("timeTabel");
-
-timeTabel.addEventListener("click",function(){
-      window.location.href = 'timetabel.html'; // Replace with the URL of the target page
-
-})
