@@ -251,3 +251,13 @@ margin-top: 10px;
     color:rgb(95, 182, 99);
     font-size: 20px;
 }
+
+
+/* styles.css */
+#installButton {
+    background-color: #007bff;
+    color: rgb(177, 39, 39);
+    border: none;
+    padding: 10px 20px;
+    font-size:20px; 
+}
