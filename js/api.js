@@ -75,41 +75,54 @@ fetch('https://shiksha-aa.vercel.app/api/routine/')
     // pwa
 
 
-
-    self.addEventListener('install', (event) => {
-      event.waitUntil(
-          caches.open('my-cache').then((cache) => {
-              return cache.addAll([
-                  '/',
-                  '/index.html',
-                  '/styles.css',
-                  '/script.js',
-                  '/offline.html', // Cache the offline page
-                  '/manifest.json',
-                  '/icon-192x192.png',
-                  '/icon-512x512.png'
-              ]);
-          })
-      );
-  });
-  
-  self.addEventListener('fetch', (event) => {
-      event.respondWith(
-          fetch(event.request).catch(() => {
-              return caches.match('/offline.html'); // Return the offline page if the user is offline
-          })
-      );
-  });
-  
-      // if ('serviceWorker' in navigator) {
-      //   window.addEventListener('load', () => {
-      //     navigator.serviceWorker.register('/service-worker.js')
-      //     .then(registration => {
-      //       console.log('Service Worker registered with scope:', registration.scope);
-      //     })
-      //     .catch(error => {
-      //       console.log('Service Worker registration failed:', error);
-      //     });
-      //   });
-      // }
+    self.addEventListener("install", function(event) {
+        event.waitUntil(preLoad());
+      });
       
+      var preLoad = function(){
+        console.log("Installing web app");
+        return caches.open("offline").then(function(cache) {
+          console.log("caching index and important routes");
+          return cache.addAll(["/blog/", "/blog", "/", "/contact", "/resume", "/offline.html"]);
+        });
+      };
+      
+      self.addEventListener("fetch", function(event) {
+        event.respondWith(checkResponse(event.request).catch(function() {
+          return returnFromCache(event.request);
+        }));
+        event.waitUntil(addToCache(event.request));
+      });
+      
+      var checkResponse = function(request){
+        return new Promise(function(fulfill, reject) {
+          fetch(request).then(function(response){
+            if(response.status !== 404) {
+              fulfill(response);
+            } else {
+              reject();
+            }
+          }, reject);
+        });
+      };
+      
+      var addToCache = function(request){
+        return caches.open("offline").then(function (cache) {
+          return fetch(request).then(function (response) {
+            console.log(response.url + " was cached");
+            return cache.put(request, response);
+          });
+        });
+      };
+      
+      var returnFromCache = function(request){
+        return caches.open("offline").then(function (cache) {
+          return cache.match(request).then(function (matching) {
+           if(!matching || matching.status == 404) {
+             return cache.match("offline.html");
+           } else {
+             return matching;
+           }
+          });
+        });
+      };
