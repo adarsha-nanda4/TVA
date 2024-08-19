@@ -4,55 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siksha PWA</title>
-    <link rel="manifest" href="/app.json">
+    <link rel="manifest" href="app.json">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #0c0034;
-            color: #fff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
         #installButton {
+            display: none;
+            padding: 10px 20px;
             background-color: #ff6f61;
             color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 18px;
             cursor: pointer;
             border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Install Siksha App</h1>
-        <button id="installButton" class="hidden">Install Siksha App</button>
-    </div>
+
+    <button id="installButton">Install Siksha App</button>
 
     <script>
         let deferredPrompt;
+        const installButton = document.getElementById('installButton');
 
         window.addEventListener('beforeinstallprompt', (e) => {
+            console.log('beforeinstallprompt event triggered');
             e.preventDefault();
             deferredPrompt = e;
-            document.getElementById('installButton').classList.remove('hidden');
-        });
+            installButton.style.display = 'block';
 
-        document.getElementById('installButton').addEventListener('click', async () => {
-            if (deferredPrompt) {
+            installButton.addEventListener('click', () => {
+                installButton.style.display = 'none';
                 deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                console.log(`User response to the install prompt: ${outcome}`);
-                deferredPrompt = null;
-                document.getElementById('installButton').classList.add('hidden');
-            }
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    console.log(choiceResult.outcome);
+                    deferredPrompt = null;
+                });
+            });
         });
     </script>
+
 </body>
 </html>
