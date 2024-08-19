@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siksha PWA</title>
-    <link rel="manifest" href="/app.json">
+    <link rel="manifest" href="app.json">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,6 +17,7 @@
             margin: 0;
         }
         #installButton {
+            display: none;
             padding: 10px 20px;
             background-color: #ff6f61;
             color: white;
@@ -41,6 +42,7 @@
             installButton.style.display = 'block';
 
             installButton.addEventListener('click', () => {
+                installButton.style.display = 'none';
                 deferredPrompt.prompt();
                 deferredPrompt.userChoice.then((choiceResult) => {
                     console.log(choiceResult.outcome);
