@@ -29,14 +29,14 @@ self.addEventListener("install", function(event) {
     });
   };
   
-  var addToCache = function(request){
-    return caches.open("offline").then(function (cache) {
-      return fetch(request).then(function (response) {
-        console.log(response.url + " was cached");
-        return cache.put(request, response);
-      });
-    });
-  };
+  // var addToCache = function(request){
+  //   return caches.open("offline").then(function (cache) {
+  //     return fetch(request).then(function (response) {
+  //       console.log(response.url + " was cached");
+  //       return cache.put(request, response);
+  //     });
+  //   });
+  // };
   
   var returnFromCache = function(request){
     return caches.open("offline").then(function (cache) {
