@@ -75,99 +75,99 @@ fetch('https://shiksha-aa.vercel.app/api/routine/')
     // // pwa
 
 
-    // self.addEventListener("install", function(event) {
-    //     event.waitUntil(preLoad());
-    //   });
+    self.addEventListener("install", function(event) {
+        event.waitUntil(preLoad());
+      });
       
-    //   var preLoad = function(){
-    //     console.log("Installing web app");
-    //     return caches.open("offline").then(function(cache) {
-    //       console.log("caching index and important routes");
-    //       return cache.addAll(["/blog/", "/blog", "/", "/contact", "/resume", "/offline.html"]);
-    //     });
-    //   };
+      var preLoad = function(){
+        console.log("Installing web app");
+        return caches.open("offline").then(function(cache) {
+          console.log("caching index and important routes");
+          return cache.addAll(["/blog/", "/blog", "/", "/contact", "/resume", "/offline.html"]);
+        });
+      };
       
-    //   self.addEventListener("fetch", function(event) {
-    //     event.respondWith(checkResponse(event.request).catch(function() {
-    //       return returnFromCache(event.request);
-    //     }));
-    //     event.waitUntil(addToCache(event.request));
-    //   });
+      self.addEventListener("fetch", function(event) {
+        event.respondWith(checkResponse(event.request).catch(function() {
+          return returnFromCache(event.request);
+        }));
+        event.waitUntil(addToCache(event.request));
+      });
       
-    //   var checkResponse = function(request){
-    //     return new Promise(function(fulfill, reject) {
-    //       fetch(request).then(function(response){
-    //         if(response.status !== 404) {
-    //           fulfill(response);
-    //         } else {
-    //           reject();
-    //         }
-    //       }, reject);
-    //     });
-    //   };
+      var checkResponse = function(request){
+        return new Promise(function(fulfill, reject) {
+          fetch(request).then(function(response){
+            if(response.status !== 404) {
+              fulfill(response);
+            } else {
+              reject();
+            }
+          }, reject);
+        });
+      };
       
-    //   var addToCache = function(request){
-    //     return caches.open("offline").then(function (cache) {
-    //       return fetch(request).then(function (response) {
-    //         console.log(response.url + " was cached");
-    //         return cache.put(request, response);
-    //       });
-    //     });
-    //   };
+      var addToCache = function(request){
+        return caches.open("offline").then(function (cache) {
+          return fetch(request).then(function (response) {
+            console.log(response.url + " was cached");
+            return cache.put(request, response);
+          });
+        });
+      };
       
-    //   var returnFromCache = function(request){
-    //     return caches.open("offline").then(function (cache) {
-    //       return cache.match(request).then(function (matching) {
-    //        if(!matching || matching.status == 404) {
-    //          return cache.match("offline.html");
-    //        } else {
-    //          return matching;
-    //        }
-    //       });
-    //     });
-    //   };
+      var returnFromCache = function(request){
+        return caches.open("offline").then(function (cache) {
+          return cache.match(request).then(function (matching) {
+           if(!matching || matching.status == 404) {
+             return cache.match("offline.html");
+           } else {
+             return matching;
+           }
+          });
+        });
+      };
 
 
 
 
 
-    //   if (!navigator.serviceWorker.controller) {
-    //     navigator.serviceWorker.register("/sw.js").then(function(reg) {
-    //         console.log("Service worker has been registered for scope: " + reg.scope);
-    //     });
-    // }
-
-const CACHE_NAME = 'pwa-cache-v1';
-const OFFLINE_URL = 'offline.html';
-
-self.addEventListener('install', event => {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(cache => cache.add(OFFLINE_URL))
-    );
-});
-
-self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-        event.respondWith(
-            fetch(event.request).catch(() => {
-                return caches.open(CACHE_NAME)
-                    .then(cache => cache.match(OFFLINE_URL));
-            })
-        );
+      if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("/sw.js").then(function(reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+        });
     }
-});
 
-self.addEventListener('activate', event => {
-    event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                cacheNames.map(cacheName => {
-                    if (cacheName !== CACHE_NAME) {
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
-        })
-    );
-});
+// const CACHE_NAME = 'pwa-cache-v1';
+// const OFFLINE_URL = 'offline.html';
+
+// self.addEventListener('install', event => {
+//     event.waitUntil(
+//         caches.open(CACHE_NAME)
+//             .then(cache => cache.add(OFFLINE_URL))
+//     );
+// });
+
+// self.addEventListener('fetch', event => {
+//     if (event.request.mode === 'navigate') {
+//         event.respondWith(
+//             fetch(event.request).catch(() => {
+//                 return caches.open(CACHE_NAME)
+//                     .then(cache => cache.match(OFFLINE_URL));
+//             })
+//         );
+//     }
+// });
+
+// self.addEventListener('activate', event => {
+//     event.waitUntil(
+//         caches.keys().then(cacheNames => {
+//             return Promise.all(
+//                 cacheNames.map(cacheName => {
+//                     if (cacheName !== CACHE_NAME) {
+//                         return caches.delete(cacheName);
+//                     }
+//                 })
+//             );
+//         })
+//     );
+// });
