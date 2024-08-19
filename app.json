@@ -1,8 +1,8 @@
 {
   "name": "Adarsha Nanda",
   "short_name": "Adarsha",
-  "theme_color": "#ffcbe4",
-  "background_color": "#fa99ca",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
   "start_url": "welcome.html",
