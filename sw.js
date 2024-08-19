@@ -6,7 +6,7 @@ self.addEventListener("install", function(event) {
     console.log("Installing web app");
     return caches.open("offline").then(function(cache) {
       console.log("caching index and important routes");
-      return cache.addAll(["/offline.html"]);
+      return cache.addAll(["/offline.html","/data/offline.gif"]);
     });
   };
   
@@ -42,8 +42,8 @@ self.addEventListener("install", function(event) {
     return caches.open("offline").then(function (cache) {
       return cache.match(request).then(function (matching) {
        if(!matching || matching.status == 404) {
-         return cache.match("offline.html");
-       } else {
+        return cache.addAll(["/offline.html","/data/offline.gif"]);
+      } else {
          return matching;
        }
       });
