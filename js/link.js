@@ -15,23 +15,23 @@ liveClass.addEventListener("click",function(){
 })
 
 timeTabel.addEventListener("click",function(){
-      window.location.href = 'underwork.html'; // Replace with the URL of the target page
+      window.location.href = 'page/underwork.html'; // Replace with the URL of the target page
 
 })
 notes.addEventListener("click",function(){
-    window.location.href = 'underwork.html'; // Replace with the URL of the target page
+    window.location.href = 'page/underwork.html'; // Replace with the URL of the target page
 
 })
 attendance.addEventListener("click",function(){
-    window.location.href = 'underwork.html'; // Replace with the URL of the target page
+    window.location.href = 'page/underwork.html'; // Replace with the URL of the target page
 
 })
 notification.addEventListener("click",function(){
-    window.location.href = 'underwork.html'; // Replace with the URL of the target page
+    window.location.href = 'page/underwork.html'; // Replace with the URL of the target page
 
 })
 mark.addEventListener("click",function(){
-    window.location.href = 'underwork.html'; // Replace with the URL of the target page
+    window.location.href = 'page/underwork.html'; // Replace with the URL of the target page
 
 })
 
