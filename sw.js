@@ -1,74 +1,63 @@
-const CACHE_NAME = "offline-v1";
-const OFFLINE_URLS = ["/offline.html", "/offline.gif"];
-
-// Install event
 self.addEventListener("install", function(event) {
   event.waitUntil(preLoad());
 });
 
-function preLoad() {
+var preLoad = function() {
   console.log("Installing web app");
-  return caches.open(CACHE_NAME).then(function(cache) {
-    console.log("Caching index and important routes");
-    return cache.addAll(OFFLINE_URLS);
+  return caches.open("offline").then(function(cache) {
+    console.log("caching index and important routes");
+    return cache.addAll(["/offline.html", "/offline.gif"]);
   });
-}
+};
 
-// Fetch event
 self.addEventListener("fetch", function(event) {
   event.respondWith(
-    checkResponse(event.request).catch(() => returnFromCache(event.request))
+    checkResponse(event.request).catch(function() {
+      return returnFromCache(event.request);
+    })
   );
   event.waitUntil(
     addToCache(event.request)
   );
 });
 
-function checkResponse(request) {
-  return fetch(request).then(response => {
+var checkResponse = function(request) {
+  return fetch(request).then(function(response) {
     if (response.status === 404) {
       return Promise.reject("Not found");
     }
     return response;
-  }).catch(() => {
-    // Handle network fetch error (e.g., logging)
-    return caches.match("/offline.html");
   });
-}
+};
 
-function returnFromCache(request) {
-  return caches.open(CACHE_NAME).then(cache => {
-    return cache.match(request).then(matching => {
+var returnFromCache = function(request) {
+  return caches.open("offline").then(function(cache) {
+    return cache.match(request).then(function(matching) {
       return matching || cache.match("/offline.html");
     });
   });
-}
+};
 
-function addToCache(request) {
-  return caches.open(CACHE_NAME).then(cache => {
-    return fetch(request).then(response => {
+var addToCache = function(request) {
+  return caches.open("offline").then(function(cache) {
+    return fetch(request).then(function(response) {
       if (response.status === 200) {
         cache.put(request, response.clone());
       }
       return response;
-    }).catch(() => {
-      // Handle network fetch error (e.g., logging)
     });
   });
-}
+};
 
-// Activate event - to clean up old caches
-self.addEventListener("activate", function(event) {
-  const cacheWhitelist = [CACHE_NAME];
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (!cacheWhitelist.includes(cacheName)) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
+
+
+
+  // var addToCache = function(request){
+  //   return caches.open("offline").then(function (cache) {
+  //     return fetch(request).then(function (response) {
+  //       console.log(response.url + " was cached");
+  //       return cache.put(request, response);
+  //     });
+  //   });
+  // };
+  
