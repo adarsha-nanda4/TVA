@@ -5,7 +5,7 @@
   "background_color": "#0c0034",
   "display": "standalone",
   "scope": "/",
-  "start_url": "page/welcome.html",
+  "start_url": "welcome.html",
   "description": "Blog and Resume for Christine Dodrill",
   "orientation": "any",
   "icons": [
