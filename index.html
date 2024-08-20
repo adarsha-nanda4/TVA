@@ -235,14 +235,13 @@
 <script src="/js/main.js"></script>
 <script src="/js/api.js"></script>
 <script src="/js/link.js"></script>
-
-<script>
+ <script>
   
-  if (!navigator.serviceWorker.controller) {
+if (!navigator.serviceWorker.controller) {
     navigator.serviceWorker.register("/sw.js").then(function(reg) {
         console.log("Service worker has been registered for scope: " + reg.scope);
     });
-}
+} 
 
 </script>
 </body>

@@ -38,6 +38,16 @@ var returnFromCache = function(request) {
   });
 };
 
+var addToCache = function(request){
+  return caches.open("offline").then(function (cache) {
+    return fetch(request).then(function (response) {
+      console.log(response.url + " was cached");
+      return cache.put(request, response);
+    });
+  });
+};
+
+
 var addToCache = function(request) {
   return caches.open("offline").then(function(cache) {
     return fetch(request).then(function(response) {
@@ -52,12 +62,5 @@ var addToCache = function(request) {
 
 
 
-  var addToCache = function(request){
-    return caches.open("offline").then(function (cache) {
-      return fetch(request).then(function (response) {
-        console.log(response.url + " was cached");
-        return cache.put(request, response);
-      });
-    });
-  };
+
   
