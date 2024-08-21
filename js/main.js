@@ -89,7 +89,7 @@ function updateTime() {
 
 // class end time set
 
-if(hours>17 || week===0){
+if(hours>8 || week===0){
 
    schedule.style.display="none" 
    noClass.style.display="flex"
