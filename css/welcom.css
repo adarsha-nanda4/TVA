@@ -42,9 +42,15 @@ body{
      font-weight: 500px;
      text-align: center;
      /* background-color: rgba(188, 169, 98, 0.244); */
-     display: flex;
 }
 .text2{
     color: gray;
     font-size: 20px;
 }
+.text3{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
