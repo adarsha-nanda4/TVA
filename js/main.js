@@ -46,7 +46,7 @@ function updateTime() {
   }
 
   time.innerHTML = `${twelvehours}:${minutes}:${seconds}`;
-  date.innerHTML = `${cdate} /0${month} /${year}`; // set date
+  date.innerHTML = `${cdate} / 0${month+1} /${year}`; // set date
 
 
 // class time 
