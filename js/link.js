@@ -36,5 +36,10 @@ mark.addEventListener("click",function(){
 })
 
 
+let loginIcon = document.getElementById("loginIcon");
 
 
+loginIcon.addEventListener("click",function(){
+    window.location.href = 'page/login.html'; // Replace with the URL of the target page
+
+})

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <title>Login</title>
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <section id="loginPage">
+
+      <div class="navbar">
+    <div id="backicon"><div><i class='bx bx-left-arrow-alt'></i></div></div>
+    <div class="loging-text"><div>Login</div></div>
+      </div>
+
+<div class="loginAnimation">
+    <img src="/data/login-animation.gif" width="500px" height="400px" alt="">
+</div>
+
+
+  <div class="wrapper">
+    <form action="#">
+        <div class="input-field">
+        <input type="text" required>
+        <label>User name</label>
+      </div>
+
+      <div class="input-field">
+        <input type="password" required>
+        <label>password</label>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+      </div>
+      <button type="submit">Log In</button>
+    </form>
+  </div>
+<script>
+  let backicon = document.getElementById("backicon");
+
+backicon.addEventListener("click",function(){
+    window.location.href = 'index.html';
+})
+</script>
+</section>
+</body>
+</html>
