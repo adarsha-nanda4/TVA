@@ -33,8 +33,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* background-color: #ffffff; */
+   padding-top: 15px;
 }
 
 /* <!--notes box --> */
