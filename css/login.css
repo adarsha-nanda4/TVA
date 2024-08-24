@@ -41,6 +41,9 @@
   align-items: center;
   font-size: 30px;
 }
+a{
+  color: black;
+}
 .loging-text{
   width:80%;
   height: 100%;
