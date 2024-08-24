@@ -115,37 +115,17 @@ form {
   transform: translateY(-120%);
 }
 
-.forget {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 25px 0 35px 0;
-  color: #000000;
-}
 
-#remember {
-  accent-color: #000000;
-}
 
-.forget label {
-  display: flex;
-  align-items: center;
-}
 
-.forget label p {
-  margin-left: 8px;
-}
 
-.wrapper a {
-  color: #efefef;
-  text-decoration: none;
-}
+
 
 .wrapper a:hover {
   text-decoration: underline;
 }
 
-button {
+#loginBtn {
   background: #fff;
   color: #000;
   font-weight: 600;
@@ -158,8 +138,3 @@ button {
   transition: 0.3s ease;
 }
 
-button:hover {
-  color: #fff;
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.15);
-}
