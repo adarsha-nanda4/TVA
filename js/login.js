@@ -16,7 +16,7 @@ btn.addEventListener("click",function(){
       btn.innerHTML="please wait..."
    
       setTimeout(function() {
-       window.location=("https://siksha.vercel.app")
+       window.location=("//www.adarshananda.com/.app")
       },1000);
    }
 })
