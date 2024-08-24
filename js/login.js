@@ -16,7 +16,7 @@ btn.addEventListener("click",function(){
       btn.innerHTML="please wait..."
    
       setTimeout(function() {
-       window.location=("//www.adarshananda.com/.app")
+       window.location=("https://www.adarshananda.com/")
       },1000);
    }
 })
