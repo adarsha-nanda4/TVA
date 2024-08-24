@@ -32,17 +32,9 @@ body{
     height: 100%; 
     display: flex;
     justify-content: center;
-    align-items: end;
-}
-.img{
-    width: 50px;
-    height: 50px;
-    background-color: black;
-    border-radius: 50%;
-   overflow: hidden;
-   background-image: url(/data/girl.png);
-   background-size: contain;
-   background-position: 5%;
+    align-items: center;
+
+    /* background-color: #ffffff; */
 }
 
 /* <!--notes box --> */
