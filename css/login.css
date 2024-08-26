@@ -138,3 +138,9 @@ form {
   transition: 0.3s ease;
 }
 
+#warnig {
+  margin: 10px;
+  color: red;
+  font-size: small;
+  display: none;
+}

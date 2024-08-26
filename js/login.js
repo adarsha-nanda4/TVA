@@ -1,6 +1,7 @@
 const userName = document.getElementById("userName");
 const password = document.getElementById("password");
 const btn = document.getElementById("loginBtn");
+const warnig= document.getElementById("warnig");
 
 
 userName.value=""
@@ -19,4 +20,19 @@ btn.addEventListener("click",function(){
        window.location=("https://www.adarshananda.com/")
       },1000);
    }
+   else if(userName.value!==emailid && password.value!==pass){
+
+      if(userName.value==="" && password.value===""){
+         warnig.style.display="flex"
+         warnig.innerHTML="pls Enter your id pass";
+     }
+ 
+     password.value="";
+     userName.value="";
+    warnig.style.display="flex"
+     setTimeout(function(){
+         warnig.style.display="none"
+     },3000)
+ } 
+ 
 })
