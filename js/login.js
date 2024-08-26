@@ -20,9 +20,10 @@ btn.addEventListener("click",function(){
        window.location=("https://www.adarshananda.com/")
       },1000);
    }
-   else if(userName.value!==emailid && password.value!==pass){
 
-      if(userName.value==="" && password.value===""){
+   else if(userName.value!==emailid || password.value!==pass){
+
+      if(userName.value==="" || password.value===""){
          warnig.style.display="flex"
          warnig.innerHTML="pls Enter your id pass";
      }
