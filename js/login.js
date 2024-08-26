@@ -23,9 +23,9 @@ btn.addEventListener("click",function(){
 
    else if(userName.value!==emailid || password.value!==pass){
 
-      if(userName.value==="" || password.value===""){
+      if(userName.value==="" &&  password.value===""){
          warnig.style.display="flex"
-         warnig.innerHTML="pls Enter your id pass";
+         warnig.innerHTML="Pls Enter your id pass";
      }
  
      password.value="";
