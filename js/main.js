@@ -1,4 +1,4 @@
-
+let class_state;
 let date = document.getElementById("date");
 let time = document.getElementById("time");
 let schedule=document.getElementById("schedulecontainer"); 
@@ -20,13 +20,17 @@ let activeTimeFour = document.getElementsByClassName("activeTimeFour");
 let classFive = document.getElementsByClassName("classFive");
 let activeTimeFive = document.getElementsByClassName("activeTimeFive");
 
+fetch('https://shiksha-aa.vercel.app/api/class/')
+.then(response => response.json())
+.then(data => {
+ class_state=data.class_state
 
+console.log(class_state)
+})
 
 function updateTime() {
 
-
   const mydate = new Date();
-
   let hours = mydate.getHours();
   const minutes = mydate.getMinutes();
   const seconds = mydate.getSeconds();
@@ -85,11 +89,11 @@ function updateTime() {
 
 
 
-
+let clsState= class_state;
 
 // class end time set
 
-if(hours>17 || week===0){
+if(hours>17 || week===0 || clsState==="HOLIDAY"){
 
    schedule.style.display="none" 
    noClass.style.display="flex"
