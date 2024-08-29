@@ -9,24 +9,83 @@
     <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
-   <section class="navbar"> 
+
+   <section class="navbar">     <!------------- navbar section-------- -->
     <div id="backicon"><a href="/index.html"><i class='bx bx-left-arrow-alt'></i></a></div>
     <div class="navbar-text"><div>Admin</div></div>
    </section>
 
-   <section class="add-box">
-
-    <div class="add-container">
-
- <div class="add-text1"><div>Welcome to the<br>Admin Dashboard</div></div>
- <div class="add-text2">
-   <a href="/page/new.html">
-    <div class="text2-btn"> <div>Admin Access  <i class='bx bx-lock-open-alt' style='color:#ffffff'  ></i></div> </div> </a>
- </div>
-
-   </div>
+   <section class="add-box">      <!------------- admine deshbord section-------- -->
+   <div class="add-container">
+   <div class="add-text1"><div>Welcome to the<br>Admin Dashboard</div></div>
+   <div class="add-text2">
+   <div class="text2-btn"> <div>Admin Access  <i class='bx bx-lock-open-alt' style='color:#ffffff'  ></i></div> </div> 
+   </div></div>
    </section>
 
 
+
+   <section class="admin-menu-box-container">    <!------------- admine control section-------- -->
+
+   <div class="admin-menu-box">
+    <div class="class-menu"><div>Class</div></div>
+    <div class="class-menu-icon"><img src="/data/admin-class.png" width="60px" alt=""></div>
+   </div>
+   
+   <div class="admin-menu-box">
+    <div class="attendance-menu-icon"><img src="/data/admin-attendance.png"  width="50px" alt=""></div>
+    <div class="attendance-menu"><div>Attendance</div></div>
+
+   </div>
+   <div class="admin-menu-box">
+    <div class="mark-menu"><div>Mark</div></div>
+    <div class="mark-menu-icon"><img src="/data/admin-mark.png"  width="60px" ></div>
+   </div>
+
+   </section>
+
+
+
+   <section class="class-state-container">   <!------------- admine class state section-------- -->
+   <div class="class-state-box">
+
+   <div class="class-state-text" id="state-info"> CLASS-DAY</div>
+   <div class="class-state-option-box">
+
+    <form action="" id="stateForm">
+
+<section class="menu-section">
+
+
+        <div class="state-menu-box">
+         <div class="ratio-box"> <input type="radio" id="class" name="class_state" value="CLASSDAY"></div>
+         <div class="class-state-animation" id="classGIF"></div>
+         <div class="class-state-name">Class </div>
+        </div>
+
+        <div class="state-menu-box">
+            <div class="ratio-box"><input type="radio" id="exams" name="class_state" value="EXAMS"></div>
+            <div class="class-state-animation" id="examGIF"></div>
+            <div class="class-state-name">Exam</div>
+        </div>
+
+        <div class="state-menu-box">
+            <div class="ratio-box"><input type="radio" id="holiday" name="class_state" value="HOLIDAY"></div>
+            <div class="class-state-animation" id="holidayGIF"></div>
+            <div class="class-state-name">Holiday</div>
+        </div>
+    </section> 
+
+       <div class="btn-section">  
+         <button type="button"  id="btn">set Day</button> 
+        </div>
+
+    </form>
+   </div>
+  
+   </div>
+   </section>
+
+<script src="/js/admin.js"></script>
 </body>
 </html>
