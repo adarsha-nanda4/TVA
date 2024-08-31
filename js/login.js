@@ -1,4 +1,5 @@
-const userName = document.getElementById("userName");
+
+  const userName = document.getElementById("userName");
 const password = document.getElementById("password");
 const btn = document.getElementById("loginBtn");
 const warnig= document.getElementById("warnig");
@@ -7,8 +8,8 @@ const warnig= document.getElementById("warnig");
 userName.value=""
 password.value=""
 
-const emailid= "abcd"
-const pass="abcd"
+const emailid= "adarsha"
+const pass="indexpage"
 
 
 btn.addEventListener("click",function(){
@@ -17,7 +18,8 @@ btn.addEventListener("click",function(){
       btn.innerHTML="please wait..."
    
       setTimeout(function() {
-       window.location=("https://www.adarshananda.com/")
+      window.location=("admin.html")
+
       },1000);
    }
 
