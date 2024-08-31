@@ -1,8 +1,10 @@
-let class_state;
+let classState;
 let date = document.getElementById("date");
 let time = document.getElementById("time");
 let schedule=document.getElementById("schedulecontainer"); 
 let noClass=document.getElementById("noClass");
+let weekDay=document.getElementById("weekDay")
+
 
 
 let classOne= document.getElementsByClassName("classOne")
@@ -23,9 +25,16 @@ let activeTimeFive = document.getElementsByClassName("activeTimeFive");
 fetch('https://shiksha-aa.vercel.app/api/class/')
 .then(response => response.json())
 .then(data => {
- class_state=data.class_state
+  classState=data.class_state
+console.log(classState)
 
-console.log(class_state)
+if(data.class_state==="CLASSDAY"){
+weekDay.style.display="flex"
+}
+else{
+  weekDay.style.display=""
+}
+
 })
 
 function updateTime() {
@@ -89,7 +98,7 @@ function updateTime() {
 
 
 
-let clsState= class_state;
+let clsState= classState;
 
 // class end time set
 
