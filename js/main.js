@@ -102,7 +102,7 @@ let clsState= classState;
 
 // class end time set
 
-if(hours>17 || week===0 || clsState==="HOLIDAY"){
+if(hours>23 || week===0 || clsState==="HOLIDAY"){
 
    schedule.style.display="none" 
    noClass.style.display="flex"
