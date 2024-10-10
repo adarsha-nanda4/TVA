@@ -6,6 +6,10 @@ let attendance = document.getElementById("attendance")
 let notification = document.getElementById("notification")
 let mark = document.getElementById("mark")
 let boxC= document.getElementById("box1");
+let boxPy= document.getElementById("box2");
+let boxMth=document.getElementById("box3");
+let boxLog=document.getElementById("box4");
+let boxCom=document.getElementById("box5");
 
 
 liveClass.addEventListener("click",function(){
@@ -47,4 +51,16 @@ loginIcon.addEventListener("click",function(){
 
 boxC.addEventListener("click",function(){
     window.location.href='page/C.html'
+})
+boxPy.addEventListener("click",function(){
+    window.location.href='page/python.html'
+})
+boxMth.addEventListener("click",function(){
+        window.location.href='page/math.html'
+})
+boxLog.addEventListener("click",function(){
+    window.location.href='page/logic.html'
+})
+boxCom.addEventListener("click",function(){
+    window.location.href='page/communication.html'
 })
