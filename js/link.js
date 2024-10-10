@@ -5,6 +5,7 @@ let notes = document.getElementById("notes")
 let attendance = document.getElementById("attendance")
 let notification = document.getElementById("notification")
 let mark = document.getElementById("mark")
+let boxC= document.getElementById("box1");
 
 
 liveClass.addEventListener("click",function(){
@@ -42,4 +43,8 @@ let loginIcon = document.getElementById("loginIcon");
 loginIcon.addEventListener("click",function(){
     window.location.href = 'page/login.html'; // Replace with the URL of the target page
 
+})
+
+boxC.addEventListener("click",function(){
+    window.location.href='page/C.html'
 })
