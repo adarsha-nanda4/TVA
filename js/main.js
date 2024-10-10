@@ -65,31 +65,31 @@ function updateTime() {
 // class time 
 
   // 1st class time set
-  if (hours === 10 ) { for (let i = 0; i < classOne.length; i++) {classOne[i].style.backgroundColor = "rgb(95, 182, 99)"; }
+  if (hours === 13 && minutes===45 ) { for (let i = 0; i < classOne.length; i++) {classOne[i].style.backgroundColor = "rgb(95, 182, 99)"; }
   for (let i = 0; i < activeTimeOne.length; i++) {activeTimeOne[i].style.display = "flex";}} 
   else {for (let i = 0; i < classOne.length; i++) {classOne[i].style.backgroundColor = "";}
   for (let i = 0; i < activeTimeOne.length; i++) {activeTimeOne[i].style.display = "";}}
 
   // 2nd class time set
-  if (hours === 11 ) {for (let i = 0; i < classTwo.length; i++) {classTwo[i].style.backgroundColor = "rgb(95, 182, 99)";}
+  if (hours === 14 && minutes===45 ) {for (let i = 0; i < classTwo.length; i++) {classTwo[i].style.backgroundColor = "rgb(95, 182, 99)";}
   for (let i = 0; i < activeTimeTwo.length; i++) { activeTimeTwo[i].style.display = "flex"; }} 
   else {for (let i = 0; i < classTwo.length; i++) {classTwo[i].style.backgroundColor = "";}
   for (let i = 0; i < activeTimeTwo.length; i++) {activeTimeTwo[i].style.display = "";}}
 
   // 3rd class time set
-  if (hours === 12) {for (let i = 0; i < classThree.length; i++) {classThree[i].style.backgroundColor = "rgb(95, 182, 99)";}
+  if (hours === 15 && minutes===45) {for (let i = 0; i < classThree.length; i++) {classThree[i].style.backgroundColor = "rgb(95, 182, 99)";}
   for (let i = 0; i < activeTimeThree.length; i++) { activeTimeThree[i].style.display = "flex"; }} 
   else {for (let i = 0; i < classThree.length; i++) {classThree[i].style.backgroundColor = "";}
   for (let i = 0; i < activeTimeThree.length; i++) {activeTimeThree[i].style.display = "";}}
 
   // 4th class time set
-  if (hours === 15) {for (let i = 0; i < classFour.length; i++) {classFour[i].style.backgroundColor = "rgb(95, 182, 99)";}
+  if (hours === 16 && minutes===45) {for (let i = 0; i < classFour.length; i++) {classFour[i].style.backgroundColor = "rgb(95, 182, 99)";}
   for (let i = 0; i < activeTimeFour.length; i++) { activeTimeFour[i].style.display = "flex"; }} 
   else {for (let i = 0; i < classFour.length; i++) {classFour[i].style.backgroundColor = "";}
   for (let i = 0; i < activeTimeFour.length; i++) {activeTimeFour[i].style.display = "";}}
 
   // 5th class time set
-  if (hours === 16 ) {for (let i = 0; i < classFive.length; i++) {classFive[i].style.backgroundColor = "rgb(95, 182, 99)";}
+  if (hours === 17 && minutes===45 ) {for (let i = 0; i < classFive.length; i++) {classFive[i].style.backgroundColor = "rgb(95, 182, 99)";}
   for (let i = 0; i < activeTimeFive.length; i++) { activeTimeFive[i].style.display = "flex"; }} 
   else {for (let i = 0; i < classFive.length; i++) {classFive[i].style.backgroundColor = "";}
   for (let i = 0; i < activeTimeFive.length; i++) {activeTimeFive[i].style.display = "";}}
