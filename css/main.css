@@ -262,12 +262,12 @@ margin-top: 10px;
 }
 .liveclass-text-area{
     width: 100%;
-    height: 10%;
+    height: 20%;
     padding: 10px;
 }
 .liveclass-button-box{
     width: 100%;
-    height: 90%;
+    height: 80%;
     display: flex;
     justify-content: end;
     align-items: end;
