@@ -11,6 +11,9 @@ let boxMth=document.getElementById("box3");
 let boxLog=document.getElementById("box4");
 let boxCom=document.getElementById("box5");
 
+let B1=document.getElementById("b1")
+let C1=document.getElementById("c1")
+
 
 liveClass.addEventListener("click",function(){
     window.scrollTo({
