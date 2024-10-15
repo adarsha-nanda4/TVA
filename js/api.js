@@ -16,34 +16,32 @@ let techerFive = document.getElementById("techerFive");
 const mydate = new Date();
 const week = mydate.getDay();
 
-fetch('https://shiksha-aa.vercel.app/api/routine/')
-.then(response => response.json())
-.then(data => {
+fetch('https://shiksha-aa.vercel.app/api/routine')
+    .then(response => response.json())
+    .then(data => {
+        
+        let sectionData = data["Routine :"].filter(item => item.section === 'B1');
+
+        // Now filter based on the weekday
+        const mydate = new Date();
+        const week = mydate.getDay();
         let Routine;
 
         if (week === 1) {
-            Routine = data["Routine :"].filter(item => item.weekday === 'MONDAY');
-        }
-        else if (week === 2) {
-            Routine = data["Routine :"].filter(item => item.weekday === 'TUESDAY');
-        }
-        else if (week === 3) {
-            Routine = data["Routine :"].filter(item => item.weekday === 'WEDNESDAY');
-        }
-        else if (week === 4) {
-            Routine = data["Routine :"].filter(item => item.weekday === 'THURSDAY');
-        }
-        else if (week === 5) {
-            Routine = data["Routine :"].filter(item => item.weekday === 'FRIDAY');
-            console.log(Routine);
-        }
-        
-        else if (week === 6) {
-            Routine = data["Routine :"].filter(item => item.weekday === 'SATURDAY');
+            Routine = sectionData.filter(item => item.weekday === 'MONDAY');
+        } else if (week === 2) {
+            Routine = sectionData.filter(item => item.weekday === 'TUESDAY');
+        } else if (week === 3) {
+            Routine = sectionData.filter(item => item.weekday === 'WEDNESDAY');
+        } else if (week === 4) {
+            Routine = sectionData.filter(item => item.weekday === 'THURSDAY');
+        } else if (week === 5) {
+            Routine = sectionData.filter(item => item.weekday === 'FRIDAY');
+        } else if (week === 6) {
+            Routine = sectionData.filter(item => item.weekday === 'SATURDAY');
         }
 
         if (Routine && Routine.length >= 5) {
-            
             classnameOne.innerHTML = Routine[0].sub;
             techerOne.innerHTML = Routine[0].teacher;
 
@@ -58,9 +56,8 @@ fetch('https://shiksha-aa.vercel.app/api/routine/')
 
             classnameFive.innerHTML = Routine[4].sub;
             techerFive.innerHTML = Routine[4].teacher;
-
         } else {
-        console.error('Insufficient data received or incorrect weekday filtering.');
+            console.error('Insufficient data received or incorrect weekday filtering.');
         }
     })
-    .catch(error => console.error('Error fetching data:', error)); 
+    .catch(error => console.error('Error fetching data:', error));

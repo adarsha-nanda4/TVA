@@ -221,18 +221,19 @@ flex-direction: column;
     align-items: center;
 }
 /* <!-------------- schedule text--------------- --> */
-.schedual-text-box{
+.live-class-text-box{
     width: 100%;
     padding: 20px;
+
 }
-.schedual-text{
+.live-class-text{
     font-size: 30px;
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
-.schedual-text2{
+.live-class-tex2{
 margin-top: 10px;
     font-size: 18px;
     color: gray;
@@ -242,4 +243,111 @@ margin-top: 10px;
 #day-name{
     color:rgb(95, 182, 99);
     font-size: 20px;
+}
+
+.liveClass-box-container{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.liveClass-box{
+    width: 90%;
+    height: 90%;
+    background-color: rgba(255, 255, 255);
+    border-radius: 25px;
+    overflow: hidden ;
+}
+.liveclass-text-area{
+    width: 100%;
+    height: 10%;
+    padding: 10px;
+}
+.liveclass-button-box{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 5px 10px ;
+    background-image: url(/data/liveclass.gif);
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .<!--------------------------no classes---------------------------------------> */
+
+.no-class-container{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    
+    display: none;
+}
+.no-class{
+    width: 90%;
+    height: 90%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.no-class-video{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     overflow: hidden;
+}
+.no-class-text-box{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0px 60px;
+
+
+}
+.no-class-text1{
+    font-size: 25px;
+}
+.no-class-text2{
+    font-size: 10px;
+    color: gray;
+}
+.week-day{
+    flex-direction: column;
+        width: 100%;
+        height: 100%;
+
 }

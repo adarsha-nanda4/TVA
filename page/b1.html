@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/schedual.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="schedual-text-box" >
+        <div class="schedual-text">Your Schedule --B1</div>
+      
+        <div class="schedual-text2">   <span id="day-name"> </span> upcoming Classes and tasks </div>
+      
+      </section>
+      
+      <!------------------------------- schedule container monday------------------------------------------->
+      <section id="schedulecontainer">
+      
+        <section id="weekDay" class="week-day">
+      
+        <section class="class-box-container">      <!-- 1st classes------------------------------------------->
+         <div class="class-box-time">            <!-- time start and end -->
+         <div class="class-start-time">1:45</div>
+         <div class="class-end-time">2:45</div>
+         </div>
+         <div class="class-box-timeline">       <!-- time line -------->
+         <div class="timeline-circle"> <div class="active-time activeTimeOne" ></div></div>
+         <div class="timeline-line"></div>
+         </div>
+         <div class="class-box" >                <!-- class box -------->
+          <div class="classes classOne" >
+         <div class="classname"><span id="classnameOne">Subject</span></div>
+         <div class="techername"> Teachers: <span id="techerOne"></span></div>
+         </div>
+         </div> 
+      </section> 
+      
+      <section class="class-box-container">    <!-- 2nd classes-------------------------------------------> 
+         <div class="class-box-time">          <!-- time start and end -->
+         <div class="class-start-time">2:45</div>
+         <div class="class-end-time">3:45</div>
+         </div>
+         <div class="class-box-timeline">      <!-- time line -------->
+         <div class="timeline-circle"> <div class="active-time activeTimeTwo"></div></div>
+         <div class="timeline-line"></div>
+         </div>
+         <div class="class-box" >              <!-- class box -------->
+         <div class="classes classTwo">
+         <div class="classname"><span id="classnameTwo">Subject</span></div>
+      
+         <div class="techername"> Teachers: <span id="techerTwo"></span></div>
+        </div>
+        </div> 
+      </section> 
+      
+      <section class="class-box-container">    <!-- 3rd classes-------------------------------------------> 
+        <div class="class-box-time">          <!-- time start and end -->
+        <div class="class-start-time">3:45</div>
+        <div class="class-end-time">4:45</div>
+        </div>
+        <div class="class-box-timeline">      <!-- time line -------->
+        <div class="timeline-circle"> <div class="active-time activeTimeThree"></div></div>
+        <div class="timeline-line"></div>
+        </div>
+        <div class="class-box" >              <!-- class box -------->
+        <div class="classes classThree">
+        <div class="classname"><span id="classnameThree">Subject</span></div>
+        <div class="techername"> Teachers: <span id="techerThree"></span> </div>
+       </div>
+       </div> 
+      </section> 
+      
+      
+      <section class="class-box-container">    <!-- 4th classes-------------------------------------------> 
+        <div class="class-box-time">          <!-- time start and end -->
+        <div class="class-start-time">4:45</div>
+        <div class="class-end-time">5:45</div>
+        </div>
+        <div class="class-box-timeline">      <!-- time line -------->
+        <div class="timeline-circle"> <div class="active-time activeTimeFour"></div></div>
+        <div class="timeline-line"></div>
+        </div>
+        <div class="class-box" >              <!-- class box -------->
+        <div class="classes classFour">
+        <div class="classname"><span id="classnameFour">Subject</span></div>
+        <div class="techername"> Teachers: <span id="techerFour"></span></div>
+       </div>
+       </div> 
+      </section> 
+      
+      <section class="class-box-container">    <!-- 5th classes-------------------------------------------> 
+        <div class="class-box-time">          <!-- time start and end -->
+        <div class="class-start-time">5:45</div>
+        <div class="class-end-time">6:45</div>
+        </div>
+        <div class="class-box-timeline">      <!-- time line -------->
+        <div class="timeline-circle"> <div class="active-time activeTimeFive"></div></div>
+        <div class="timeline-line"></div>
+        </div>
+        <div class="class-box" >              <!-- class box -------->
+        <div class="classes classFive">
+        <div class="classname"><span id="classnameFive">Subject</span></div>
+        <div class="techername"> Teachers: <span id="techerFive"></span> </div>
+       </div>
+       </div> 
+      </section> 
+      
+      
+      
+      </section>
+      </section>
+
+  
+      <script src="/js/timesedul.js"></script>
+
+      <script>
+    // Get current day of the week
+const mydate = new Date();
+const week = mydate.getDay();  // 0 for Sunday, 1 for Monday, etc.
+
+// Create a mapping of days to API endpoints
+const dayMapping = {
+    0: 'sunday',
+    1: 'monday',
+    2: 'tuesday',
+    3: 'wednesday',
+    4: 'thursday',
+    5: 'friday',
+    6: 'saturday'
+};
+
+// Get the correct day name from the mapping
+const dayName = dayMapping[week];
+console.log(dayName);
+
+// Build the API URL dynamically based on the current day
+const apiUrl = `https://shiksha-aa.vercel.app/api/routine/B1/${dayName}`;
+
+// Fetch the routine for the specific day
+fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+        const routineData = data['Routine/'];
+        console.log(routineData)
+            document.getElementById("classnameOne").innerHTML = routineData[0].sub;
+            document.getElementById("techerOne").innerHTML = routineData[0].teacher;
+
+            document.getElementById("classnameTwo").innerHTML = routineData[1].sub;
+            document.getElementById("techerTwo").innerHTML = routineData[1].teacher;
+
+            document.getElementById("classnameThree").innerHTML = routineData[2].sub;
+            document.getElementById("techerThree").innerHTML = routineData[2].teacher;
+
+            document.getElementById("classnameFour").innerHTML = routineData[3].sub;
+            document.getElementById("techerFour").innerHTML = routineData[3].teacher;
+
+            document.getElementById("classnameFive").innerHTML = routineData[4].sub;
+            document.getElementById("techerFive").innerHTML = routineData[4].teacher;
+        
+    })
+    .catch(error => console.error('Error fetching data:', error));
+
+      </script>
+
+
+</body>
+</html>
