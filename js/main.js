@@ -40,7 +40,7 @@ function updateTime() {
     }
 
     time.innerHTML = `${twelveHours}:${minutes}:${seconds}`;
-    date.innerHTML = `${cDate} / 0${month + 1} / ${year}`; // set date
+    date.innerHTML = `${cDate} / ${month + 1} / ${year}`; // set date
 
 
 
