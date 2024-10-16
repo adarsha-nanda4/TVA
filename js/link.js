@@ -1,3 +1,5 @@
+let me = document.getElementById("me")
+
 let timeTabel= document.getElementById("timeTabel");
 let liveClass= document.getElementById("liveClass")
 let notes = document.getElementById("notes")
@@ -20,6 +22,10 @@ liveClass.addEventListener("click",function(){
         top: document.body.scrollHeight,
         behavior: 'smooth' // Smooth scroll
     });
+})
+
+me.addEventListener("click",function(){
+    window.location.href="https://www.adarshananda.com/"
 })
 
 timeTabel.addEventListener("click",function(){

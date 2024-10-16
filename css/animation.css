@@ -109,6 +109,17 @@
     font-size: 30px;
     color: #fff;
 }
+#plusoption{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+      background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
 
 .options {
     position: absolute;
@@ -136,8 +147,8 @@
 
 /* Expanded button (Cylindrical shape expanding upwards) */
 .circle-button.expand {
-    width: 90px;
-    height: 300px; /* Increase height to expand upwards */
+    width: 85px;
+    height: 330px; /* Increase height to expand upwards */
     border-radius: 25px;
     transform: translateY(-10px); /* Move button upwards by the height difference */
 }
