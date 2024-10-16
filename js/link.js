@@ -13,8 +13,8 @@ let boxMth=document.getElementById("box3");
 let boxLog=document.getElementById("box4");
 let boxCom=document.getElementById("box5");
 
-let B1=document.getElementById("b1")
-let C1=document.getElementById("c1")
+// let B1=document.getElementById("b1")
+// let C1=document.getElementById("c1")
 
 
 liveClass.addEventListener("click",function(){
@@ -75,9 +75,9 @@ boxCom.addEventListener("click",function(){
 })
 
 
-B1.addEventListener("click",function(){
-   window.location.href='page/b1.html'
-})
-C1.addEventListener("click",function(){
-    window.location.href='page/c1.html'
- })
+// B1.addEventListener("click",function(){
+//    window.location.href='page/b1.html'
+// })
+// C1.addEventListener("click",function(){
+//     window.location.href='page/c1.html'
+//  })

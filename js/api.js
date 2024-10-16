@@ -1,63 +1,55 @@
-let classnameOne = document.getElementById("classnameOne");
-let techerOne = document.getElementById("techerOne");
-
-let classnameTwo = document.getElementById("classnameTwo");
-let techerTwo = document.getElementById("techerTwo");
-
-let classnameThree = document.getElementById("classnameThree");
-let techerThree = document.getElementById("techerThree");
-
-let classnameFour = document.getElementById("classnameFour");
-let techerFour = document.getElementById("techerFour");
-
-let classnameFive = document.getElementById("classnameFive");
-let techerFive = document.getElementById("techerFive");
+// Get the current day of the week
 
 const mydate = new Date();
-const week = mydate.getDay();
+const week = mydate.getDay(); // 0 for Sunday, 1 for Monday, etc.
 
-fetch('https://shiksha-aa.vercel.app/api/routine')
-    .then(response => response.json())
-    .then(data => {
-        
-        let sectionData = data["Routine :"].filter(item => item.section === 'B1');
+// Create a mapping of days to API endpoints
+const dayMapping = {
+    0: 'sunday',
+    1: 'monday',
+    2: 'tuesday',
+    3: 'wednesday',
+    4: 'thursday',
+    5: 'friday',
+    6: 'saturday'
+};
 
-        // Now filter based on the weekday
-        const mydate = new Date();
-        const week = mydate.getDay();
-        let Routine;
+// Get the correct day name from the mapping
+const dayName = dayMapping[week];
+console.log(dayName);
 
-        if (week === 1) {
-            Routine = sectionData.filter(item => item.weekday === 'MONDAY');
-        } else if (week === 2) {
-            Routine = sectionData.filter(item => item.weekday === 'TUESDAY');
-        } else if (week === 3) {
-            Routine = sectionData.filter(item => item.weekday === 'WEDNESDAY');
-        } else if (week === 4) {
-            Routine = sectionData.filter(item => item.weekday === 'THURSDAY');
-        } else if (week === 5) {
-            Routine = sectionData.filter(item => item.weekday === 'FRIDAY');
-        } else if (week === 6) {
-            Routine = sectionData.filter(item => item.weekday === 'SATURDAY');
-        }
+// Retrieve the selected section from localStorage
+const sec = localStorage.getItem("selectedSection");
+let secName=document.getElementById("secName")
+secName.innerHTML=(sec)
 
-        if (Routine && Routine.length >= 5) {
-            classnameOne.innerHTML = Routine[0].sub;
-            techerOne.innerHTML = Routine[0].teacher;
 
-            classnameTwo.innerHTML = Routine[1].sub;
-            techerTwo.innerHTML = Routine[1].teacher;
+if (sec) {
+    // Build the API URL dynamically based on the current day and section
+    const apiUrl = `https://shiksha-aa.vercel.app/api/routine/${sec}/${dayName}`;
 
-            classnameThree.innerHTML = Routine[2].sub;
-            techerThree.innerHTML = Routine[2].teacher;
-
-            classnameFour.innerHTML = Routine[3].sub;
-            techerFour.innerHTML = Routine[3].teacher;
-
-            classnameFive.innerHTML = Routine[4].sub;
-            techerFive.innerHTML = Routine[4].teacher;
-        } else {
-            console.error('Insufficient data received or incorrect weekday filtering.');
-        }
-    })
-    .catch(error => console.error('Error fetching data:', error));
+    // Fetch the routine for the specific day and section
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const routineData = data['Routine/'];
+            
+            document.getElementById("classnameOne").innerHTML = routineData[0].sub;
+            document.getElementById("techerOne").innerHTML = routineData[0].teacher;
+    
+            document.getElementById("classnameTwo").innerHTML = routineData[1].sub;
+            document.getElementById("techerTwo").innerHTML = routineData[1].teacher;
+    
+            document.getElementById("classnameThree").innerHTML = routineData[2].sub;
+            document.getElementById("techerThree").innerHTML = routineData[2].teacher;
+    
+            document.getElementById("classnameFour").innerHTML = routineData[3].sub;
+            document.getElementById("techerFour").innerHTML = routineData[3].teacher;
+    
+            document.getElementById("classnameFive").innerHTML = routineData[4].sub;
+            document.getElementById("techerFive").innerHTML = routineData[4].teacher;
+        })
+        .catch(error => console.error('Error fetching data:', error));
+} else {
+    console.error('No section selected');
+}
