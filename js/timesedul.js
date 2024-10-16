@@ -42,7 +42,7 @@ function updateTime() {
     resetClasses();
 
     // Check class times and update styles accordingly
-    if      (hours === 13 && minutes >= 45) {setActiveClass(classOne, activeTimeOne);} 
+    if      (hours === 1 && minutes >= 45) {setActiveClass(classOne, activeTimeOne);} 
     else if (hours === 14 && minutes < 45)  {setActiveClass(classOne, activeTimeOne);}
     else if (hours === 14 && minutes >= 45) {setActiveClass(classTwo, activeTimeTwo);} 
     else if (hours === 15 && minutes < 45) {setActiveClass(classTwo, activeTimeTwo);} 

@@ -13,13 +13,22 @@
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     height: 40px;
-    padding: 10px 10px;
+    padding: 5px 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     border-radius: 8px;
+
   }
-  
+
+.loder-tex2{
+
+
+  margin: 0px 10px;
+    font-size: 20px;
+    color: rgb(92, 92, 92);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
   .words {
     overflow: hidden;
     position: relative;
