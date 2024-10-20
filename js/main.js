@@ -1,25 +1,26 @@
 let classState;
-// let noClass = document.getElementById("noClass");
-// let weekDay=document.getElementById("weekDay")
+let noClass = document.getElementById("noClass");
+let weekDay=document.getElementById("weekDay")
 let schedualTextBox=document.getElementById("schedualTextBox")
 
 // Fetch the class state from API
-// fetch('https://shiksha-aa.vercel.app/api/class/')
-//     .then(response => response.json())
-//     .then(data => {
-//         classState = data.class_state;
-//         console.log(classState);
+fetch('https://shiksha-aa.vercel.app/api/class/')
+    .then(response => response.json())
+    .then(data => {
+        classState = data.class_state;
+        console.log(classState);
 
-//         // Set the visibility of the week day
-//         if (classState === "CLASSDAY") {
-//             weekDay.style.display = "flex";
-//         } else {
-//             weekDay.style.display = "";
-//         }
+        // Set the visibility of the week day
+        if (classState === "HOLIDAY") {
+            weekDay.style.display = "none";
+            noClass.style.display="flex"
+        } else {
+            weekDay.style.display = "";
+        }
 
-//         // Run the class end time logic after fetching classState
-//         checkClassEndTime(classState);
-//     });
+        // Run the class end time logic after fetching classState
+        checkClassEndTime(classState);
+    });
 
 
 
