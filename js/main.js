@@ -19,7 +19,7 @@ fetch('https://shiksha-aa.vercel.app/api/class/')
         }
 
         // Run the class end time logic after fetching classState
-        checkClassEndTime(classState);
+        // checkClassEndTime(classState);
     });
 
 

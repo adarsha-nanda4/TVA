@@ -32,6 +32,9 @@ let activeTimeEight = document.getElementsByClassName("activeTimeEight");
 let classNine = document.getElementsByClassName("classNine");
 let activeTimeNine = document.getElementsByClassName("activeTimeNine");
 
+let classTen = document.getElementsByClassName("classTen");
+let activeTimeTen = document.getElementsByClassName("activeTimeTen");
+
 // Update the time and manage class schedule
 function updateTime() {
     const myDate = new Date();
@@ -69,10 +72,11 @@ function updateTime() {
     else if (hours === 10) { setActiveClass(classThree, activeTimeThree); }
     else if (hours === 11) { setActiveClass(classFour, activeTimeFour); }
     else if (hours === 12) { setActiveClass(classFive, activeTimeFive); }
-    else if (hours === 14) { setActiveClass(classSix, activeTimeSix); }
-    else if (hours === 15) { setActiveClass(classSeven, activeTimeSeven); }
-    else if (hours === 16) { setActiveClass(classEight, activeTimeEight); }
-    else if (hours === 17) { setActiveClass(classNine, activeTimeNine); }
+    else if (hours === 13) { setActiveClass(classSix, activeTimeSix); }
+    else if (hours === 14) { setActiveClass(classSeven, activeTimeSeven); }
+    else if (hours === 15) { setActiveClass(classEight, activeTimeEight); }
+    else if (hours === 16) { setActiveClass(classNine, activeTimeNine); }
+    else if (hours === 17) { setActiveClass(classTen, activeTimeTen); }
 }
 
 function resetClasses() {
