@@ -74,10 +74,3 @@ boxCom.addEventListener("click",function(){
     window.location.href='page/communication.html'
 })
 
-
-// B1.addEventListener("click",function(){
-//    window.location.href='page/b1.html'
-// })
-// C1.addEventListener("click",function(){
-//     window.location.href='page/c1.html'
-//  })

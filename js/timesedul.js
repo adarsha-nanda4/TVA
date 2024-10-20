@@ -1,9 +1,9 @@
-
 let date = document.getElementById("date");
 let time = document.getElementById("time");
+
 let schedule = document.getElementById("schedulecontainer");
-let noClass = document.getElementById("noClass");
-let weekDay = document.getElementById("weekDay");
+// let noClass = document.getElementById("noClass");
+// let weekDay = document.getElementById("weekDay");
 
 let classOne = document.getElementsByClassName("classOne");
 let activeTimeOne = document.getElementsByClassName("activeTimeOne");
@@ -20,7 +20,17 @@ let activeTimeFour = document.getElementsByClassName("activeTimeFour");
 let classFive = document.getElementsByClassName("classFive");
 let activeTimeFive = document.getElementsByClassName("activeTimeFive");
 
+let classSix = document.getElementsByClassName("classSix");
+let activeTimeSix = document.getElementsByClassName("activeTimeSix");
 
+let classSeven = document.getElementsByClassName("classSeven");
+let activeTimeSeven = document.getElementsByClassName("activeTimeSeven");
+
+let classEight = document.getElementsByClassName("classEight");
+let activeTimeEight = document.getElementsByClassName("activeTimeEight");
+
+let classNine = document.getElementsByClassName("classNine");
+let activeTimeNine = document.getElementsByClassName("activeTimeNine");
 
 // Update the time and manage class schedule
 function updateTime() {
@@ -29,30 +39,40 @@ function updateTime() {
     const minutes = myDate.getMinutes();
     const seconds = myDate.getSeconds();
     const cDate = myDate.getDate();
+
     const week = myDate.getDay();
     const month = myDate.getMonth();
     const year = myDate.getFullYear();
 
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const dayName = days[myDate.getDay()];
+
+    const dayName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][myDate.getDay()];
     document.getElementById('day-name').textContent = dayName;
+
+
+
+    let twelveHours = hours;
+
+    if (hours > 12) {
+        twelveHours = hours - 12;
+    }
+
+    time.innerHTML = `${twelveHours}:${minutes}:${seconds}`;
+    date.innerHTML = `${cDate} / ${month + 1} / ${year}`; // set date
 
 
     // Reset all classes initially
     resetClasses();
 
     // Check class times and update styles accordingly
-    if      (hours === 1 && minutes >= 45) {setActiveClass(classOne, activeTimeOne);} 
-    else if (hours === 14 && minutes < 45)  {setActiveClass(classOne, activeTimeOne);}
-    else if (hours === 14 && minutes >= 45) {setActiveClass(classTwo, activeTimeTwo);} 
-    else if (hours === 15 && minutes < 45) {setActiveClass(classTwo, activeTimeTwo);} 
-    else if (hours === 15 && minutes >= 45) {setActiveClass(classThree, activeTimeThree);} 
-    else if (hours === 16 && minutes < 45) {setActiveClass(classThree, activeTimeThree);} 
-    else if (hours === 16 && minutes >= 45) {setActiveClass(classFour, activeTimeFour);}
-    else if (hours === 17 && minutes < 45) {setActiveClass(classFour, activeTimeFour);}
-    else if (hours === 17 && minutes >= 45) {setActiveClass(classFive, activeTimeFive);}
-    else if (hours === 18 && minutes < 45) { setActiveClass(classFive, activeTimeFive);
-    }
+    if (hours === 8) { setActiveClass(classOne, activeTimeOne); }
+    else if (hours === 9) { setActiveClass(classTwo, activeTimeTwo); }
+    else if (hours === 10) { setActiveClass(classThree, activeTimeThree); }
+    else if (hours === 11) { setActiveClass(classFour, activeTimeFour); }
+    else if (hours === 12) { setActiveClass(classFive, activeTimeFive); }
+    else if (hours === 14) { setActiveClass(classSix, activeTimeSix); }
+    else if (hours === 15) { setActiveClass(classSeven, activeTimeSeven); }
+    else if (hours === 16) { setActiveClass(classEight, activeTimeEight); }
+    else if (hours === 17) { setActiveClass(classNine, activeTimeNine); }
 }
 
 function resetClasses() {
@@ -61,6 +81,10 @@ function resetClasses() {
     resetClass(classThree, activeTimeThree);
     resetClass(classFour, activeTimeFour);
     resetClass(classFive, activeTimeFive);
+    resetClass(classSix, activeTimeSix);
+    resetClass(classSeven, activeTimeSeven);
+    resetClass(classEight, activeTimeEight);
+    resetClass(classNine, activeTimeNine);
 }
 
 function resetClass(classElements, activeTimeElements) {
@@ -79,13 +103,6 @@ function setActiveClass(classElements, activeTimeElements) {
     for (let i = 0; i < activeTimeElements.length; i++) {
         activeTimeElements[i].style.display = "flex";
     }
-}
-
-// Class end time check logic
-function checkClassEndTime(clsState) {
-    const myDate = new Date();
-    const hours = myDate.getHours();
-    const week = myDate.getDay();
 }
 
 // Call updateTime every second to keep the time and class schedule updated

@@ -1,8 +1,6 @@
 let classState;
-let date = document.getElementById("date");
-let time = document.getElementById("time");
-let noClass = document.getElementById("noClass");
-let weekDay=document.getElementById("weekDay")
+// let noClass = document.getElementById("noClass");
+// let weekDay=document.getElementById("weekDay")
 let schedualTextBox=document.getElementById("schedualTextBox")
 
 // Fetch the class state from API
@@ -26,31 +24,6 @@ let schedualTextBox=document.getElementById("schedualTextBox")
 
 
 // Update the time and manage class schedule
-function updateTime() {
-    const myDate = new Date();
-    const hours = myDate.getHours();
-    const minutes = myDate.getMinutes();
-    const seconds = myDate.getSeconds();
-    const cDate = myDate.getDate();
-    const week = myDate.getDay();
-    const month = myDate.getMonth();
-    const year = myDate.getFullYear();
-
-
-    let twelveHours = hours;
-
-    if (hours > 12) {
-        twelveHours = hours - 12;
-    }
-
-    time.innerHTML = `${twelveHours}:${minutes}:${seconds}`;
-    date.innerHTML = `${cDate} / ${month + 1} / ${year}`; // set date
-
-
-
-
-}
-
 
 
 
@@ -78,7 +51,7 @@ C1.addEventListener("click", function() {
 
 
 // Call updateTime every second to keep the time and class schedule updated
-setInterval(updateTime, 1000);
+// setInterval(updateTime, 1000);
 
 // animation js code
 
