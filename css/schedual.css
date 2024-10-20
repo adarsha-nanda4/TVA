@@ -53,7 +53,7 @@ margin-top: 10px;
 
 .class-box-container{
     width: 99%;
-    height: 150px;
+    height: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,16 +144,13 @@ margin-top: 10px;
 
 }
 .classname{
-    font-size: 20px;
-    color: white;
-}
-.chaptername{
     font-size: 15px;
     color: white;
 }
+
 .techername{
     /* margin-top: 20px; */
-    font-size: 15px;
+    font-size: 13px;
     color: rgb(255, 255, 255);
 }
 .week-day{
