@@ -89,6 +89,7 @@ function resetClasses() {
     resetClass(classSeven, activeTimeSeven);
     resetClass(classEight, activeTimeEight);
     resetClass(classNine, activeTimeNine);
+    resetClass(classTen, activeTimeTen);
 }
 
 function resetClass(classElements, activeTimeElements) {
