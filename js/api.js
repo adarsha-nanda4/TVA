@@ -33,6 +33,8 @@ if (sec) {
         .then(response => response.json())
         .then(data => {
             const routineData = data['Routine/'];
+
+            console.log(routineData)
             
             document.getElementById("classnameOne").innerHTML = routineData[0].sub;
             document.getElementById("techerOne").innerHTML = routineData[0].teacher;
@@ -48,6 +50,21 @@ if (sec) {
     
             document.getElementById("classnameFive").innerHTML = routineData[4].sub;
             document.getElementById("techerFive").innerHTML = routineData[4].teacher;
+
+            document.getElementById("classnameSix").innerHTML = routineData[5].sub;
+            document.getElementById("techerSix").innerHTML = routineData[5].teacher;
+
+            document.getElementById("classnameSeven").innerHTML = routineData[6].sub;
+            document.getElementById("techerSeven").innerHTML = routineData[6].teacher;
+
+            document.getElementById("classnameEight").innerHTML = routineData[7].sub;
+            document.getElementById("techerEight").innerHTML = routineData[7].teacher;
+
+            document.getElementById("classnameNine").innerHTML = routineData[8].sub;
+            document.getElementById("techerNine").innerHTML = routineData[8].teacher;
+
+            document.getElementById("classnameTen").innerHTML = routineData[9].sub;
+            document.getElementById("techerTen").innerHTML = routineData[9].teacher;
         })
         .catch(error => console.error('Error fetching data:', error));
 } else {
