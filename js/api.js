@@ -25,6 +25,7 @@ secName.innerHTML=(sec)
 
 
 if (sec) {
+    
     // Build the API URL dynamically based on the current day and section
     const apiUrl = `https://shiksha-aa.vercel.app/api/routine/${sec}/${dayName}`;
 
@@ -34,7 +35,7 @@ if (sec) {
         .then(data => {
             const routineData = data['Routine/'];
 
-            console.log(routineData)
+            console.log(routineData) 
             
             document.getElementById("classnameOne").innerHTML = routineData[0].sub;
             document.getElementById("techerOne").innerHTML = routineData[0].teacher;
