@@ -27,22 +27,28 @@ fetch('https://shiksha-aa.vercel.app/api/class/')
 // Update the time and manage class schedule
 
 
-
+let A1= document.getElementById("a1")
 let B1 = document.getElementById("b1");
 let C1 = document.getElementById("c1");
 
+
+A1.addEventListener("click", function() {
+    localStorage.setItem("selectedSection", "A1");
+    window.location.reload();
+});
+
 B1.addEventListener("click", function() {
-    // Save the selected section (B1) to localStorage or sessionStorage
     localStorage.setItem("selectedSection", "B1");
     window.location.reload();
     // window.location.href = 'page/rotintest.html';
 });
 
 C1.addEventListener("click", function() {
-    // Save the selected section (C1) to localStorage or sessionStorage
     localStorage.setItem("selectedSection", "C1");
     window.location.reload();
 });
+
+
 
 
 
