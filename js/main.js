@@ -28,6 +28,7 @@ fetch('https://shiksha-aa.vercel.app/api/class/')
 
 
 let A1= document.getElementById("a1")
+let A2= document.getElementById("a2")
 let B1 = document.getElementById("b1");
 let C1 = document.getElementById("c1");
 
@@ -37,16 +38,22 @@ A1.addEventListener("click", function() {
     window.location.reload();
 });
 
+A2.addEventListener("click",function(){
+    localStorage.setItem("selectedSection" ,"A2")
+    window.location.reload();
+})
+
 B1.addEventListener("click", function() {
     localStorage.setItem("selectedSection", "B1");
     window.location.reload();
-    // window.location.href = 'page/rotintest.html';
+
 });
 
 C1.addEventListener("click", function() {
     localStorage.setItem("selectedSection", "C1");
     window.location.reload();
 });
+
 
 
 
