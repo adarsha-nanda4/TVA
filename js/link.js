@@ -29,7 +29,7 @@ me.addEventListener("click",function(){
 })
 
 timeTabel.addEventListener("click",function(){
-      window.location.href = 'page/underwork.html'; // Replace with the URL of the target page
+      window.location.href = 'page/timetabel.html'; // Replace with the URL of the target page
 
 })
 notes.addEventListener("click",function(){
