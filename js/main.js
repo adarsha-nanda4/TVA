@@ -30,6 +30,7 @@ fetch('https://shiksha-aa.vercel.app/api/class/')
 let A1= document.getElementById("a1")
 let A2= document.getElementById("a2")
 let B1 = document.getElementById("b1");
+let B2 = document.getElementById("b2");
 let C1 = document.getElementById("c1");
 
 
@@ -45,6 +46,13 @@ A2.addEventListener("click",function(){
 
 B1.addEventListener("click", function() {
     localStorage.setItem("selectedSection", "B1");
+    window.location.reload();
+
+});
+
+
+B2.addEventListener("click", function() {
+    localStorage.setItem("selectedSection", "B2");
     window.location.reload();
 
 });
