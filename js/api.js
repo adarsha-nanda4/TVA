@@ -1,20 +1,16 @@
-
-
 const mydate = new Date();
 const week = mydate.getDay(); 
 let ClassState;
 
-ClassState=localStorage.getItem('classState');
+ClassState = localStorage.getItem('classState');
 console.log(ClassState);
 
-
-        if (ClassState === "HOLIDAY" || week===0 ) {
-            weekDay.style.display = "none";
-            noClass.style.display="flex"
-        } else {
-            weekDay.style.display = "";
-        }
-
+if (ClassState === "HOLIDAY" || week === 0) {
+    weekDay.style.display = "none";
+    noClass.style.display = "flex";
+} else {
+    weekDay.style.display = "";
+}
 
 const dayMapping = {
     0: 'sunday',
@@ -36,39 +32,50 @@ let secName = document.getElementById("secName");
 secName.innerHTML = sec;
 
 if (sec) {
-    const apiUrl = `https://shiksha-aa.vercel.app/api/routine/${sec}/${dayName}`;
-    
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            const routineData = data['Routine/'] || []; 
-            console.log(routineData);
+    const localStorageKey = `routineData_${sec}_${dayName}`;
+    const storedRoutineData = localStorage.getItem(localStorageKey);
 
-            
-            routineData.forEach((period) => {
-                const { shift, sub, teacher } = period;
+    if (storedRoutineData) {
+        // Use the stored data if available
+        displayRoutine(JSON.parse(storedRoutineData));
+    } else {
+        // Fetch data from the API if not available in localStorage
+        const apiUrl = `https://shiksha-aa.vercel.app/api/routine/${sec}/${dayName}`;
 
-                if (shift && sub && teacher) {
-                    const index = shift - 1;
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const routineData = data['Routine/'] || [];
+                
+                // Store data in localStorage
+                localStorage.setItem(localStorageKey, JSON.stringify(routineData));
+                
+                // Display routine data
+                displayRoutine(routineData);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+}
 
-                    if (index >= 0 && index < numberWords.length) {
-                        const classElementId = `classname${numberWords[index]}`;
-                        const teacherElementId = `techer${numberWords[index]}`;
-                        const classElement = document.getElementById(classElementId);
-                        const teacherElement = document.getElementById(teacherElementId);
+// Function to display the routine data
+function displayRoutine(routineData) {
+    routineData.forEach((period) => {
+        const { shift, sub, teacher } = period;
 
-                        if (classElement && teacherElement) {
-                            classElement.innerHTML = sub;
-                            teacherElement.innerHTML = teacher;
-                        }
-                    }
+        if (shift && sub && teacher) {
+            const index = shift - 1;
+
+            if (index >= 0 && index < numberWords.length) {
+                const classElementId = `classname${numberWords[index]}`;
+                const teacherElementId = `techer${numberWords[index]}`;
+                const classElement = document.getElementById(classElementId);
+                const teacherElement = document.getElementById(teacherElementId);
+
+                if (classElement && teacherElement) {
+                    classElement.innerHTML = sub;
+                    teacherElement.innerHTML = teacher;
                 }
-            });
-        })
-        .catch(error => console.error('Error fetching data:', error));
-} 
-
-
-
-
-
+            }
+        }
+    });
+}
