@@ -2,6 +2,19 @@
 
 const mydate = new Date();
 const week = mydate.getDay(); 
+let ClassState;
+
+ClassState=localStorage.getItem('classState');
+console.log(ClassState);
+
+
+        if (ClassState === "HOLIDAY" || week===0 ) {
+            weekDay.style.display = "none";
+            noClass.style.display="flex"
+        } else {
+            weekDay.style.display = "";
+        }
+
 
 const dayMapping = {
     0: 'sunday',
@@ -53,9 +66,9 @@ if (sec) {
             });
         })
         .catch(error => console.error('Error fetching data:', error));
-} else {
-    console.error('No section selected');
-}
+} 
+
+
 
 
 

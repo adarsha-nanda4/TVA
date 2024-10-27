@@ -9,17 +9,7 @@ fetch('https://shiksha-aa.vercel.app/api/class/')
     .then(data => {
         classState = data.class_state;
         console.log(classState);
-
-        // Set the visibility of the week day
-        if (classState === "HOLIDAY") {
-            weekDay.style.display = "none";
-            noClass.style.display="flex"
-        } else {
-            weekDay.style.display = "";
-        }
-
-        // Run the class end time logic after fetching classState
-        // checkClassEndTime(classState);
+localStorage.setItem("classState",classState );
     });
 
 
