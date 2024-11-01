@@ -65,12 +65,13 @@ font-size: 80%;
 
 }
 
-.secA1{
+.sec{
   width: 100%;
   margin-top: 20px;
   padding: 2px;
+  border: 1px solid gray;
 }
-.secA1name{
+.secname{
   text-align: center;
 }
 
@@ -93,3 +94,4 @@ th {
     margin-top: 10px;
     text-align: left;
 }
+
