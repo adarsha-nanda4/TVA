@@ -101,7 +101,8 @@ th {
 
 .notice{
   width: 100%;
+  border-radius: 0px 0px 10px 10px;
   background-color: rgba(128, 128, 128, 0.335);
-  margin: 20px 0px;
-  padding: 5px 10px;
+  margin-top: 20px;
+  padding: 5px 10px 15px 10px;
 }
