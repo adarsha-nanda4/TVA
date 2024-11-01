@@ -99,3 +99,9 @@ th {
     text-align: left;
 }
 
+.notice{
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.335);
+  margin: 20px 0px;
+  padding: 5px 10px;
+}
