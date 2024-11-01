@@ -70,7 +70,7 @@ function updateTime() {
     if (hours === 8) { setActiveClass(classOne, activeTimeOne); }
     else if (hours === 9) { setActiveClass(classTwo, activeTimeTwo); }
     else if (hours === 10) { setActiveClass(classThree, activeTimeThree); }
-    else if (hours === 23) { setActiveClass(classFour, activeTimeFour); }
+    else if (hours === 11) { setActiveClass(classFour, activeTimeFour); }
     else if (hours === 12) { setActiveClass(classFive, activeTimeFive); }
     else if (hours === 13) { setActiveClass(classSix, activeTimeSix); }
     else if (hours === 14) { setActiveClass(classSeven, activeTimeSeven); }
