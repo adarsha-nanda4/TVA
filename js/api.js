@@ -93,8 +93,10 @@ circleRefresh.addEventListener("click", function () {
     // Clear all local storage data
     localStorage.clear();
 
+
     // Restore the selectedSection key-value pair
     if (selectedSectionValue !== null) {
         localStorage.setItem("selectedSection", selectedSectionValue);
+        window.location.reload();
     }
 });
