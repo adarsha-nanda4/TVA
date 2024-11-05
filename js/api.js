@@ -1,5 +1,6 @@
 const mydate = new Date();
 const week = mydate.getDay(); 
+
 let ClassState;
 
 ClassState = localStorage.getItem('classState');
@@ -46,6 +47,8 @@ if (sec) {
             .then(response => response.json())
             .then(data => {
                 const routineData = data['Routine/'] || [];
+
+                console.log(routineData)
                 
                 // Store data in localStorage
                 localStorage.setItem(localStorageKey, JSON.stringify(routineData));
@@ -79,3 +82,19 @@ function displayRoutine(routineData) {
         }
     });
 }
+
+
+let circleRefresh = document.getElementById("circleRefresh");
+
+circleRefresh.addEventListener("click", function () {
+    // Save the value of selectedSection
+    const selectedSectionValue = localStorage.getItem("selectedSection");
+
+    // Clear all local storage data
+    localStorage.clear();
+
+    // Restore the selectedSection key-value pair
+    if (selectedSectionValue !== null) {
+        localStorage.setItem("selectedSection", selectedSectionValue);
+    }
+});

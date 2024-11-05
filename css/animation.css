@@ -100,7 +100,7 @@
 /* plus button */
 
 
-.circle-button {
+.circle-button , .circle-refresh {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -112,7 +112,13 @@
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
+    
 }
+.circle-refresh {
+  color: white;
+}
+
+
 
 .plus-icon {
     font-size: 30px;
