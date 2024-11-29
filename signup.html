@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/signup.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Login</title>
+
+</head>
+<body >
+    <section id="loginPage">
+
+      <div class="navbar"><div class="loging-text"><div>Login</div></div></div>
+
+    <div class="loginAnimation"><img src="/data/loginsignup.gif" width="500px" height="400px" alt=""></div>
+
+ <!------------------------------- login form ------------------------>
+     <div class="wrapper" id="loginform">   <!-- login form -->
+
+    <form action="#">
+
+        <div class="input-field">
+        <input id="userName"  >
+        <label>Reg.No</label>
+        </div>
+
+      <div class="input-field">
+      <input id="password"  type="password" required>
+      <label>password</label>
+      </div>
+
+    <div id="warnig"> Your id password is wrong </div>
+
+      <div id="loginBtn" type="button">Log In</div>
+
+    </form> 
+
+    <div  id="gotosignup" >Register new account</div>
+  </div>
+
+<!-- ---------------------------signup form --------------------->
+  <div class="wrapper" id="signupform" >    <!-- signup form -->
+
+    <form id="signUpForm" action="#">
+      <div class="input-field">
+      
+        <input id="NameSing" type="text" required>
+        <label for="NameSing">Name</label>
+      </div>
+  
+      <div class="input-field">
+       
+        <input id="RegNoSing" type="text" required>
+        <label for="RegNoSing">Reg.No / App.No</label>
+      </div>
+  
+      <div class="input-field">
+
+        <input id="MailSing" type="email" required>
+        <label for="MailSing">Email</label>
+      </div>
+  
+      <div class="input-field">
+ 
+        <input id="PasswordSing" type="password" required>
+        <label for="PasswordSing">Password</label>
+      </div>
+  
+      <button id="SignupBtn" type="submit">Sign up</button>
+    </form>
+
+
+    <div id="gotologin">already have an account</div>
+
+    <div id="msg"></div>
+  </div>
+  
+
+
+
+</section>
+
+<script src="/js/loginsignup.js"></script>
+
+</body>
+</html>
